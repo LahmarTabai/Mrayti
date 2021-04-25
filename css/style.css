@@ -1,0 +1,157 @@
+/*reset css*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Zhi+Mang+Xing&display=swap');
+
+html{
+    font-size: 62.5%;
+    background: #000 url(../asset/arriereplan.jpg)no-repeat fixed center center / cover;
+    overflow-x: hidden;
+    
+} 
+body{
+   font: 1.6rem sans-serif;
+   margin: 0;
+
+}
+
+h1,h2,h3,ul,p{
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   font-weight: normal;
+}
+*{
+   box-sizing: border-box; 
+}
+
+/* theme*/
+/* palette couleur variable css: généralements sont déclarées dans une pseoudo-classe; */ 
+:root{ /* on met ce root comme une repertoire pour ne pas répéter les couleurs just on prend la var comme raccourcis*/
+   --color-default:#222;
+   --color-warning:hsl(315, 90%, 51%);
+   --color-font-header:#fff;
+   
+}
+header h1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    line-height: 6.5rem;
+    background-color: var( --color-warning);
+    color: var(--color-font-header);
+    text-align: center;
+    margin-bottom: 6.5rem;
+    width: 100%;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    
+}
+
+span{
+    animation: texte 0.5s linear infinite alternate;
+
+}
+
+span:hover{
+    animation: paused;
+}
+
+@keyframes texte {
+    from{
+        opacity: 0;
+        transform: scale(2.0);
+        
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+        color: #fff;
+    }
+    
+}
+
+
+
+
+
+main, footer{
+    max-width: 100rem;
+    margin: 8rem auto 0;
+   
+}
+footer{
+    margin-top: 1rem;
+    padding: 1.0rem;/* padding : remplissage interne */
+    border: solid 0.1rem transparent; /* bordure : c'est la bordure qui entoure le main et le footer */
+    margin: 1rem auto 0; /* margin:(Haut et bas)  (Droite et gauche)*/ /* pour centrer le main et le footer */ /* pour espacer le margin et le footer du h1 en haut et entre eux en bas*/   
+}
+footer p, footer details summary{
+    padding: .5rem;
+    text-align: center;
+    color:#fff
+}
+footer p{
+    color: black;
+}
+
+/*change for display grid*/
+
+main ul{
+    background-color: #fff;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(4,1fr);    /* 4 colonnes dans (une fraction = ( ligne)) */
+    grid-gap: 1.0rem;
+    border: solid .1rem #ccc;
+    border-radius: .8rem;
+}
+main ul li img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.2rem;
+}
+main ul li:last-child{
+    grid-column:  1 / 5;
+    grid-row: 1;
+
+}
+
+main ul :first-child{
+    grid-column:  1 / 5;
+    grid-row: 6;
+
+}
+
+
+
+
+header h1{
+    font:5rem 'Zhi Mang Xing', cursive;
+    margin:0;
+    font-weight: bold;
+
+} 
+
+footer p{
+    animation: textep 6s linear infinite alternate;
+
+}
+footer p:hover{
+    animation: paused;
+
+}
+
+
+@keyframes textep {
+    from{
+        transform: translate(70rem);
+        
+    }
+    to{
+        transform: translate(-70rem);
+        
+    }
+    
+}
